@@ -1,3 +1,217 @@
-.header {
-    background: radial-gradient(52.95% 104.57% at 23.13% 47.05%, #FFFFFF 0%, #F6F8FC 100%);
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |                 common compoennt styles                      |
+   |                                                              |
+   !--------------------------------------------------------------!  */
+a {
+    text-decoration: none !important;
 }
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |              classes related to the header only              |
+   |                                                              |
+   !--------------------------------------------------------------!  */
+
+.header {
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+    color: #ff0000 !important;
+
+}
+
+.hamburger,
+.navItemIcons {
+    display: none;
+}
+
+.iconRow {
+    width: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.iconRow img {
+    width: 100%;
+}
+
+.headerItems {
+    transition: 500ms;
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+}
+
+.headerItems ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    width: 60%;
+    align-items: center;
+}
+
+.headerItems ul li {
+    text-decoration: none !important;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.activeComponent {
+    color: #A0178A;
+    transition: 200ms;
+    position: relative;
+    /* font-weight: 700; */
+    /* font-size: 16.5px; */
+}
+
+.activeComponent::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 19px;
+    height: 9px;
+    width: 60%;
+    border-top: 3px solid #A0178A;
+}
+
+.inActiveComponent {
+    color: black;
+}
+
+.chatButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatButton button,
+.hamburger button {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 500;
+    font-size: 16px;
+    padding: .4rem .7rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    border: 2px solid #030F46;
+    background-color: transparent;
+}
+
+.chatButton button {
+    width: 130px;
+
+}
+
+
+
+@media only screen and (max-width : 1100px) {
+    .headerItems ul {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .headerItems {
+        position: absolute;
+        flex-direction: column;
+        align-items: end;
+        height: 50vh;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 5rem;
+    }
+
+    .navItemIcons {
+        display: inline;
+    }
+
+    .headerItems ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .headerItems ul li {
+        margin: .5rem;
+        padding: 1rem;
+        width: 50%;
+        border-radius: 25px;
+        background: radial-gradient(100% 104.57% at 23.13% 47.05%, #FFFFFF 0%, #F6F8FC 52.95%);
+        align-items: center;
+
+    }
+
+    .headerItems ul :nth-child(2),
+    .headerItems ul :nth-child(5) {
+        width: 70%;
+    }
+
+    .headerItems ul :nth-child(3),
+    .headerItems ul :nth-child(4) {
+        width: 90%;
+    }
+
+    .chatButton {
+        width: 74%;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .chatButton button {
+        width: 75%;
+        justify-content: center;
+        gap: .5rem;
+    }
+
+    .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    .headerItems {
+        margin-top: 8rem;
+
+    }
+}
+
+.blockDisplay {
+    display: none !important;
+}
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |              classes related to the home component           |
+   |                                                              |
+   !--------------------------------------------------------------!  */
