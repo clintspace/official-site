@@ -1,0 +1,3 @@
+export const  INTRO_PARAGRAPH = <p>
+    Our goal is to help organizations in a simple and profound way to reflect their own core values through all possible aspects of communication...
+</p>
