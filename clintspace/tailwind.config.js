@@ -26,11 +26,12 @@ module.exports = {
         fontWeight: 400,
         lineHeight: "140%",
       }],
-      colors: {
-        primary_white: '#F6F8FC',
-        subPara: "#222222"
-      },
-    }
+      
+    },
+    colors: {
+      primary_white: '#F6F8FC',
+      subPara: "#222222"
+    },
   }},
   plugins: [],
 }
