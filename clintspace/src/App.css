@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;500&family=Cantarell&display=swap');
 
 /*! --------------------------------------------------------------!
    |                                                              |
@@ -7,6 +10,8 @@
    !--------------------------------------------------------------!  */
 a {
   text-decoration: none !important;
+    text-decoration: none !important;
+    /* overflow-x: hidden; */
 }
 
 button {
@@ -486,4 +491,116 @@ body {
 
 .footer {
   width: 100%;
+}
+    .textRow h2 {
+        font-size: 32px;
+    }
+
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |              classes related to the services                 |
+   |                                                              |
+   !--------------------------------------------------------------!  */
+
+.services {
+    padding: 5% 8%;
+    margin: 0 auto;
+}
+
+.services span {
+    display: flex;
+    align-items: center;
+}
+
+
+.services span p,
+.services span h2 {
+    text-align: center;
+    width: 60%;
+
+}
+
+
+.servicesItems h5 {
+    font-family: 'Advent Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 33px;
+    color: #383939;
+}
+
+.servicesItems p {
+    font-family: 'Cantarell';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.servicesItems {
+    width: 45%;
+    background: #FDFEFF;
+    box-shadow: 4px 26px 56px rgba(34, 13, 68, 0.05);
+    border-radius: 16px;
+    min-width: 45%;
+    margin: 2rem 1rem;
+    padding: 2rem 2rem;
+}
+
+.servicesListWraper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width : 850px) {
+    .services center p {
+        width: 90%;
+    }
+
+    .services {
+        padding: 5% .5%;
+        margin: 0 auto;
+    }
+
+
+}
+
+@media screen and (max-width : 650px) {
+    .servicesListWraper {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        justify-content: flex-start;
+    }
+
+    .services span h2 {
+        font-size: 30px;
+
+    }
+
+    .services span {
+        display: flex;
+        align-items: center;
+    }
+
+    .services span p,
+    .services span h2 {
+        text-align: left;
+        padding: 0rem 1rem;
+        width: 100%;
+    }
+
+
+
+
+    .servicesItems {
+        min-width: 300px;
+    }
+
+    .servicesListWraper::-webkit-scrollbar {
+        display: none;
+    }
 }
