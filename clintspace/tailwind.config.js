@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'footer_background': `url('/src/assets/footer_image.jpg')`,
+        'footer_background': "url('./assets/footer_image.jpg')",
       },
     fontSize: {
       hero: ['44px', {
