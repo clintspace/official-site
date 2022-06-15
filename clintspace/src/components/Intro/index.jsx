@@ -17,8 +17,7 @@ function IntroComponent() {
                 </div>
             </div>
             <div className="introImage">
-                <img src="../lightBulb.png" alt="" />
-                <img src="../bulbShadow.png" alt="" />
+                <img src="/egg.png" alt="" />
             </div>
         </div>
     )
