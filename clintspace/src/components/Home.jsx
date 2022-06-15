@@ -12,8 +12,9 @@ function Home() {
       <IntroComponent />
       <OurStories />
 
-      <Footer />
       <Services />
+
+      <Footer />
     </>
 
   )
