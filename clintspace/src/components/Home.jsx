@@ -11,12 +11,9 @@ function Home() {
       <Header />
       <IntroComponent />
       <OurStories />
-<<<<<<< HEAD
 
       <Footer />
-=======
       <Services />
->>>>>>> bb64bccd4fb44a8729c4eeba77f17fcf678078ee
     </>
 
   )
