@@ -14,7 +14,7 @@ import { MdOutlineConnectWithoutContact } from "react-icons/md";
     },
     {
         componentId :  "#about",
-        componentName : "Out Story",
+        componentName : "Our Story",
         icon:  <FcAbout className="navItemIcons"  />
     },
     {
@@ -28,8 +28,8 @@ import { MdOutlineConnectWithoutContact } from "react-icons/md";
         icon:  <RiPassportFill className="navItemIcons"  />
     },
     {
-        componentId :  "#term",
-        componentName : "Term",
+        componentId :  "#team",
+        componentName : "Team",
         icon:  <BsFileEarmarkRuled className="navItemIcons"  />
     },
     {

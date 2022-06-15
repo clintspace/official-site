@@ -7,17 +7,19 @@ import { AiOutlineClose } from "react-icons/ai";
 
 function Header() {
   const [componentId, setComponentId] = useState("#Home");
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState();
 
   useEffect(() => {
     function handleResize() {
       const { innerWidth: width } = window;
       width <= 850 && setShowMenu(false);
-      width >= 850 && setShowMenu(true);
+      width > 850 && setShowMenu(true);
     }
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
 
   // this function will render our all nav items;
   const getNavItem = () =>
