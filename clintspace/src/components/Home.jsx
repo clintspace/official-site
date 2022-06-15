@@ -1,5 +1,6 @@
 import React from 'react'
 import IntroComponent from './Intro'
+import Footer from './layouts/Footer'
 import Header from './layouts/Header'
 import OurStories from './outStroies'
 
@@ -9,6 +10,8 @@ function Home() {
       <Header />
       <IntroComponent />
       <OurStories />
+
+      <Footer />
     </>
 
   )

@@ -1,4 +1,4 @@
-import { OUR_STORY_PARAGRAPH } from "./paragraph"
+import { OUR_STORY_PARAGRAPH } from "./content"
 
 const Index = () => {
   return (
