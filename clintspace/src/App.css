@@ -40,6 +40,10 @@ body {
     overflow-x: hidden !important;
 }
 
+.pagePadding {
+    padding: 8% 5% !important;
+}
+
 /*! --------------------------------------------------------------!
    |                                                              |
    |              classes related to the header only              |
@@ -506,19 +510,20 @@ body {
    |                                                              |
    !--------------------------------------------------------------!  */
 
-.services {
-    padding: 5% 8%;
-    margin: 0 auto;
+.commonHeader {
+    /* padding: 0rem 8%; */
+    margin: 3% auto;
+
 }
 
-.services span {
+.commonHeader span {
     display: flex;
     align-items: center;
 }
 
 
-.services span p,
-.services span h2 {
+.commonHeader span p,
+.commonHeader span h2 {
     text-align: center;
     width: 60%;
 
@@ -558,17 +563,21 @@ body {
     justify-content: center;
 }
 
+
+
 @media screen and (max-width : 850px) {
-    .services center p {
-        width: 90%;
+    .commonHeader span p {
+        width: 80%;
     }
 
-    .services {
-        padding: 5% .5%;
+    .commonHeader {
         margin: 0 auto;
     }
 
+    .pagePadding {
+        padding: 5% .5%;
 
+    }
 }
 
 @media screen and (max-width : 650px) {
@@ -579,21 +588,20 @@ body {
         justify-content: flex-start;
     }
 
-    .services span h2 {
+    .commonHeader span h2 {
         font-size: 30px;
 
     }
 
-    .services span {
+    .commonHeader span {
         display: flex;
         align-items: center;
     }
 
-    .services span p,
-    .services span h2 {
+    .commonHeader span p,
+    .commonHeader span h2 {
         text-align: left;
-        padding: 0rem 1rem;
-        width: 100%;
+        width: 100% !important;
     }
 
 
@@ -605,5 +613,110 @@ body {
 
     .servicesListWraper::-webkit-scrollbar {
         display: none;
+    }
+}
+
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |              classes related to the portofolio               |
+   |                                                              |
+   !--------------------------------------------------------------!  */
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 70%;
+    margin: 2rem auto;
+
+}
+
+
+.tabs p {
+    background: #FFFFFF;
+    padding: .3rem .8rem;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+    border: 1px solid #030f4600;
+    transition: 500ms;
+    white-space: nowrap;
+
+}
+
+.tabs .tabButton {
+    border: 1px solid #030F46;
+    box-shadow: 0px 12px 24px rgba(3, 15, 70, 0.08);
+    border-radius: 8px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 80vw;
+    height: 40vw;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 4 / 5;
+}
+
+.div2 {
+    grid-area: 4 / 1 / 6 / 3;
+}
+
+.div3 {
+    grid-area: 4 / 3 / 6 / 5;
+}
+
+.div4 {
+    grid-area: 1 / 5 / 3 / 7;
+}
+
+.div5 {
+    grid-area: 1 / 7 / 3 / 9;
+}
+
+.div6 {
+    grid-area: 3 / 5 / 6 / 9;
+}
+
+.parent img {
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+}
+
+@media screen and (max-width : 859px) {
+    .parent {
+        height: 30vh;
+    }
+}
+
+@media screen and (max-width : 650px) {
+    .tabs {
+        justify-content: start;
+        overflow-x: scroll;
+        width: 100%;
+    }
+
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .imageWraper {
+        width: 96vw;
+        overflow-x: scroll;
+    }
+
+    .parent {
+        width: 179vw;
+        height: 50vh;
     }
 }

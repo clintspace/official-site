@@ -3,6 +3,7 @@ import IntroComponent from './Intro'
 import Footer from './layouts/Footer'
 import Header from './layouts/Header'
 import OurStories from './outStroies'
+import Portofoilo from './portofoilo'
 import Services from './services'
 
 function Home() {
@@ -12,7 +13,8 @@ function Home() {
       <IntroComponent />
       <OurStories />
       <Services />
-      <Footer />
+      <Portofoilo />
+      {/* <Footer /> */}
     </>
 
   )
