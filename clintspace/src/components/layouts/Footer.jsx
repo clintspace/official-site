@@ -7,31 +7,32 @@ import { ReactComponent as Phone } from "../../assets/phone.svg";
 import { ReactComponent as Email } from "../../assets/email.svg";
 import { HashLink } from "react-router-hash-link";
 import { NAV_BAR_ITEMS } from "../../constants/navBarItem";
+import { RiChat1Line } from "react-icons/ri";
 
 function Footer() {
 
 
 	// this function will render our all nav items;
 	const getNavItems = () =>
-    NAV_BAR_ITEMS.map((item) => (
-      <>
-        <li key={item.componentId}>
-          
-          <HashLink
-            to={item.componentId}
-          >
-            
-            {item.icon} {item.componentName}
-          </HashLink>
-        </li>
-      </>
-    ));
+		NAV_BAR_ITEMS.map((item) => (
+			<>
+				<li key={item.componentId}>
+
+					<HashLink
+						to={item.componentId}
+					>
+
+						{item.icon} {item.componentName}
+					</HashLink>
+				</li>
+			</>
+		));
 
 	return (
-		<div className="footer " id="contact">
-			<ul className="top-section flex items-center">
-				<li className="about w-full lg:w-1/3 place-contents-center">
-					<div>
+		<div className="footer pagePadding " id="contact">
+			<ul className="top-section flex items-center  ">
+				<li className="about w-full lg:w-1/3 place-contents-cente r">
+					<div className="ulHeadings">
 						<About />
 						<p>About</p>
 					</div>
@@ -48,10 +49,16 @@ function Footer() {
 							<Email />
 							<p>info@clintspace.com</p>
 						</li>
+						<li className="address flex flex-row ">
+							<div className="inputGroup w-full" >
+								<input type="text" placeholder='Email or Phone' />
+								<button style={{ width: "fit-content", fontSize: "25px" }}  >  <RiChat1Line /> </button>
+							</div>
+						</li>
 					</ul>
 				</li>
 				<li className="information w-full lg:w-1/3">
-					<div>
+					<div className="ulHeadings">
 						<Info />
 						<p>Information</p>
 					</div>
@@ -60,9 +67,17 @@ function Footer() {
 					</ul>
 				</li>
 				<li className="instagram hidden xs:block lg:block xl:block w-1/3">
-					<div>
+					<div className="ulHeadings">
 						<Instagram />
 						<p>Instagram</p>
+					</div>
+					<div className="footerImageGrid">
+						<div className="img1"> <img src="./Logo Mockup with 3D Logo.png" alt="" /> </div>
+						<div className="img2"> <img src="./Logo Mockup with 3D Logo.png" alt="" /> </div>
+						<div className="img3"> <img src="./Logo Mockup with 3D Logo.png" alt="" /> </div>
+						<div className="img4"> <img src="./Logo Mockup with 3D Logo.png" alt="" /> </div>
+						<div className="img5"> <img src="./Logo Mockup with 3D Logo.png" alt="" /> </div>
+						<div className="img6"> <img src="./egg.png" alt="" /> </div>
 					</div>
 				</li>
 			</ul>

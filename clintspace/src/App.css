@@ -11,7 +11,6 @@
 a {
     text-decoration: none !important;
     text-decoration: none !important;
-    /* overflow-x: hidden; */
 }
 
 button {
@@ -41,7 +40,11 @@ body {
 }
 
 .pagePadding {
-    padding: 8% 5% !important;
+    padding: 5% 5% !important;
+}
+
+body::-webkit-scrollbar {
+    display: none !important;
 }
 
 /*! --------------------------------------------------------------!
@@ -132,14 +135,14 @@ body {
 .hamburger button {
     display: flex;
     justify-content: space-evenly;
-    font-weight: 500;
     font-size: 16px;
+    font-weight: 500;
     padding: 0.4rem 0.7rem;
     border: 1px solid black;
     border-radius: 8px;
-    border: 2px solid #030f46;
     background-color: transparent;
     align-items: center;
+    z-index: 999;
 }
 
 .chatButton button {
@@ -152,16 +155,20 @@ body {
     }
 }
 
+
+
 @media only screen and (max-width: 850px) {
+
     .headerItems {
         position: absolute;
         flex-direction: column;
         align-items: end;
-        height: 50vh;
+        /* height: 53vh; */
         justify-content: center;
-        width: 91%;
+        width: 100%;
         flex-direction: column;
-        margin-top: 5rem;
+        margin-top: 7%;
+        left: 0;
     }
 
     .navItemIcons {
@@ -171,39 +178,54 @@ body {
     .headerItems ul {
         flex-direction: column;
         align-items: flex-end;
+        width: 100%;
+        background-color: white;
     }
 
     .headerItems ul li {
-        margin: 0.5rem;
-        padding: 1rem;
-        width: 50%;
-        border-radius: 25px;
-        background: radial-gradient(100% 104.57% at 23.13% 47.05%,
-                #ffffff 0%,
-                #f6f8fc 52.95%);
-        align-items: center;
+        padding: 0.5rem;
+        text-align: center;
+        width: 74%;
+        border-bottom: 1px solid #f1f2f3;
+        margin-bottom: 1px solid;
+        margin: 0.5rem auto;
+        font-weight: 600;
+
     }
 
-    .headerItems ul :nth-child(2),
-    .headerItems ul :nth-child(5) {
-        width: 70%;
+    .activeComponent::before {
+        display: none;
     }
 
-    .headerItems ul :nth-child(3),
-    .headerItems ul :nth-child(4) {
-        width: 90%;
-    }
 
     .chatButton {
-        width: 74%;
-        margin-top: 1rem;
+        background-color: white;
+        width: 100%;
         justify-content: center;
+        padding: .4rem 0rem;
+        padding-bottom: 3rem;
+        margin-top: -1px;
+        box-shadow: rgb(0 0 0 / 20%) -1px 12px 12px 0px;
     }
 
     .chatButton button {
         width: 75%;
         justify-content: center;
         gap: 0.5rem;
+
+
+        border-radius: 100rem;
+        padding: 1rem;
+        font-family: 'Avenir Next';
+        font-size: 1rem;
+        padding: .5rem 3rem;
+
+        box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+        border: solid 3px transparent;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(143 23 23 / 0%)), linear-gradient(8deg, #530ba9, #e90bc8);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 1000px 1px #fff inset;
     }
 
     .hamburger {
@@ -211,18 +233,86 @@ body {
         justify-content: center;
         align-items: center;
     }
+
+    .iconRow img {
+        width: 75%;
+    }
+
+
+
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 400px) {
     .headerItems {
-        margin-top: 8rem;
+        margin-top: 15%;
     }
+}
+
+
+
+@keyframes bottomToTop {
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        transform: translateY(-600px);
+
+        display: none;
+        /* display: none */
+    }
+}
+
+.w3-animate-top {
+    animation-duration: 1s !important;
+    animation-fill-mode: both !important;
 
 }
 
 .blockDisplay {
-    display: none !important;
+    animation-name: bottomToTop;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+
+}
+
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 18px;
+    height: 2px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.bar2 {
+    width: 30px;
+    margin-left: -7px;
+}
+
+
+
 
 /*! --------------------------------------------------------------!
    |                                                              |
@@ -301,6 +391,7 @@ body {
     background-color: #ffffff;
     font-size: 16px;
     font-weight: 700;
+
 }
 
 .inputGroup button {
@@ -314,6 +405,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 .inputGroup input::placeholder {
@@ -381,12 +474,20 @@ body {
         width: 100%;
     }
 
+
     .introText h2 {
-        font-size: 40px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 2.5rem;
+    }
+
+    .introText {
+        width: 100%;
+        padding: 5rem 1.5rem;
     }
 
     .intro {
-        height: 35rem;
+        height: 52rem;
     }
 }
 
@@ -415,12 +516,7 @@ body {
     width: 45%;
 }
 
-.textRow h2 {
-    margin-bottom: 2rem;
-    font-weight: 600;
-    font-size: 44px;
-    line-height: 121.5%;
-}
+
 
 .textRow p {
     font-weight: 500;
@@ -597,7 +693,20 @@ body {
 
 
     .servicesItems {
-        min-width: 300px;
+        min-width: 260px;
+    }
+
+    .servicesItems img {
+        width: 30%;
+    }
+
+    .servicesItems h5 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .servicesItems p {
+        font-size: 16px;
     }
 
     .servicesListWraper::-webkit-scrollbar {
@@ -710,13 +819,517 @@ body {
     }
 }
 
+
+
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |              classes related to the team members             |
+   |                                                              |
+   !--------------------------------------------------------------!  */
+
+.team {
+    display: flex;
+    padding-right: 0 !important;
+}
+
+.card {
+    position: relative;
+    background-color: #ffffff;
+    padding: 1rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 24px rgba(3, 15, 70, 0.08);
+    border-radius: 16px;
+    min-width: 250px;
+}
+
+.right {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    width: 80%;
+    padding: 2rem 0;
+    scroll-behavior: smooth;
+}
+
+.right::-webkit-scrollbar {
+    display: none;
+}
+
+.card .imgRow {
+    padding: 4rem 1rem 0rem 1rem;
+    background-color: #f1f2f3;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+}
+
+.card a {
+    position: absolute;
+    right: 7%;
+    font-size: 2.5rem;
+    bottom: 3%;
+    color: rgb(236, 0, 212);
+}
+
+.card .imgRow img {
+    width: 100%;
+}
+
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: centet;
+    width: 50%;
+    justify-content: center;
+    /* background-color: royalblue; */
+    margin-right: 5rem;
+}
+
+.left h2 {
+    width: 110%;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 39px;
+
+}
+
+.buttonRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonRow button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.buttonRow button:focus {
+    background-color: transparent !important;
+    user-select: none;
+}
+
+
+
+.buttonRow:first-child {
+    margin-top: 6px;
+
+}
+
+
+@media screen and (max-width : 2000px) {
+    .left {
+        width: 15%;
+    }
+
+    .left h2 {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width : 1500px) {
+    .left {
+        width: 24%;
+    }
+
+    .card .imgRow {
+        max-width: 230px !important;
+    }
+
+}
+
+@media screen and (max-width : 1100px) {
+    .left {
+        width: 32%;
+        margin-right: 2rem;
+    }
+
+    .left h2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .team {
+        flex-direction: column;
+    }
+
+    .card .imgRow {
+        max-width: 200px !important;
+    }
+
+    .card {
+        min-width: 220px;
+        max-width: 200px;
+    }
+
+    .team>* {
+        width: 90%;
+    }
+
+    .right {
+        width: 97%;
+        padding: 2rem 1rem;
+    }
+
+    .team .left h2,
+    .team .left p {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .bottomButtonRow {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |              classes related to the clients                  |
+   |                                                              |
+   !--------------------------------------------------------------!  */
+
+
+.clients {
+    display: flex;
+    width: 100%;
+    padding: 8% 1rem !important;
+    background-color: #ffffff;
+}
+
+.clientCardWraper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    overflow: scroll;
+    gap: 1rem;
+    position: relative;
+    padding: 2rem 0rem;
+}
+
+
+
+.clientCardWraper::-webkit-scrollbar {
+    display: none;
+}
+
+.cardRow {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.rightClient {
+    width: 30%;
+    position: relative;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rightClient::before {
+    content: '';
+    position: absolute;
+    width: 31%;
+    left: -26%;
+    height: 86%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.12230829831932777) 0%, rgba(255, 255, 255, 1) 69%);
+}
+
+
+.clientCard {
+    position: relative;
+    /* padding: 2rem 3rem; */
+    box-shadow: 0px 4px 24px rgba(3, 15, 70, 0.08);
+    border-radius: 16px;
+    width: 203px;
+    height: 206px;
+}
+
+.clientCard p {
+    text-align: center;
+}
+
+.clientCardImageRow {
+    padding-top: 1.5rem;
+    width: 50%;
+    margin: 0 auto;
+    min-width: 85px;
+    min-height: 124px;
+    display: flex;
+    align-items: center;
+}
+
+.clientCardImageRow img {
+    width: 100%;
+}
+
+.imageColms {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width : 500px) {
+    .clients {
+        flex-direction: column-reverse;
+        padding-bottom: 0rem !important;
+    }
+
+    .rightClient {
+        width: 100%;
+        padding: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    .rightClient::before {
+        display: none;
+    }
+
+    .clientCardWraper {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .clientCard {
+        width: 130px;
+        height: 160px;
+    }
+
+    .clientCardImageRow {
+        width: 50%;
+        margin: 0 auto;
+        min-width: 55px;
+        min-height: 90px;
+    }
+}
+
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |              classes related to the testimonial              |
+   |                                                              |
+   !--------------------------------------------------------------!  */
+
+.testCardWarper {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.testCard {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 24px rgba(3, 15, 70, 0.08);
+    border-radius: 24px;
+    width: 345px;
+    position: relative;
+    margin-top: 15%;
+
+}
+
+div.testImageWraper {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 9;
+    position: relative;
+    margin-top: -35%;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+div.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(3, 15, 70);
+    background: linear-gradient(0deg, rgba(3, 15, 70, 0.49205619747899154) 32%, rgba(160, 23, 138, 0.517266281512605) 98%);
+    opacity: 1;
+}
+
+.testCard img {
+    width: 100%;
+    display: block;
+    z-index: -9;
+    object-fit: cover;
+    min-height: 143px;
+
+}
+
+.testCard h4 {
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+}
+
+.testCard hr {
+    width: 30%;
+    margin: 1rem auto;
+}
+
+
+@media screen and (max-width : 1250px) {
+    .testCardWarper {
+        width: 100%;
+        overflow-x: scroll;
+        padding-top: 5rem;
+        justify-content: flex-start;
+    }
+
+    .testCardWarper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .testCard {
+        min-width: 310px;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .testCard {
+        min-width: 270px;
+    }
+
+    div.testImageWraper {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .testCard img {
+        object-fit: contain;
+    }
+
+    .testCard p {
+        font-size: 13px;
+    }
+
+    .testCard h4 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .testCardWarper {
+        padding-top: 0rem;
+    }
+
+}
+
+
+/*! --------------------------------------------------------------!
+   |                                                              |
+   |              classes related to the reports                  |
+   |                                                              |
+   !--------------------------------------------------------------!  */
+.reports {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.reportTextArea {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.reportTextArea h3 {
+    font-weight: 600;
+    font-size: 50px;
+    text-align: right;
+    background: linear-gradient(166.44deg, #F41170 -3.51%, #0021BA 180.61%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.reportTextArea p {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    color: #030F46;
+    width: 50px;
+}
+
+@media screen and (max-width : 1500px) {
+    .reportTextArea p {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .reportTextArea h3 {
+        font-size: 40px !important;
+    }
+
+    .reportImageWraper {
+        /* width: 25%; */
+    }
+
+
+}
+
+@media screen and (max-width : 960px) {
+    .reports {
+        padding: 5% 1rem !important;
+        gap: 1rem;
+
+    }
+
+    .reportImageWraper {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .reportTextArea p {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .reportTextArea h3 {
+        font-size: 25px !important;
+    }
+
+    .reportImageWraper img {
+        width: 50%;
+    }
+
+}
+
+
+
+
+
 /* -------------------------------------------------------------------------- */
 /*                                   footer                                   */
 /* -------------------------------------------------------------------------- */
 
 .footer {
     width: 100%;
-    height: 484px;
+    /* height: 484px; */
     background: url('./assets/footer_image.png'), linear-gradient(180deg, #A0178A 0%, #030F46 85%);
     mix-blend-mode: multiply;
 }
@@ -727,10 +1340,78 @@ body {
     font-family: "Quicksand", sans-serif;
     font-weight: 400;
     font-size: 16px;
+    align-items: flex-start;
 }
 
 .footer ul li {
-    color: white
+    color: white;
+    margin: 1rem;
+    gap: 1rem;
 }
 
-.bottom-section::before {}
+.ulHeadings {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.footerImageGrid {
+    display: grid;
+    width: 350px;
+    height: 300px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: .5rem;
+
+}
+
+.footerImageGrid img {
+    width: 100%;
+    object-fit: cover;
+    background: linear-gradient(180deg, #A0178A 0%, #030F46 100%);
+    mix-blend-mode: overlay;
+
+    opacity: 0.9;
+    border-radius: 6px;
+
+}
+
+.img1 {
+    display: flex;
+    grid-area: 1 / 1 / 5 / 5;
+}
+
+.img2 {
+    display: flex;
+    grid-area: 1 / 5 / 3 / 7;
+}
+
+.img3 {
+    display: flex;
+    grid-area: 3 / 5 / 5 / 7;
+}
+
+.img4 {
+    display: flex;
+    grid-area: 5 / 5 / 7 / 7;
+}
+
+.img5 {
+    display: flex;
+    grid-area: 5 / 1 / 7 / 3;
+}
+
+.img6 {
+    display: flex;
+    grid-area: 5 / 3 / 7 / 5;
+}
+
+@media screen and (max-width : 600px) {
+    .footer ul {
+        flex-direction: column;
+    }
+}

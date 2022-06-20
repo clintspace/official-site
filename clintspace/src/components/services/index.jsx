@@ -17,7 +17,7 @@ function Services() {
     return (
         <div className='bg-primary_white services  pagePadding ' id='services'>
 
-            <ContainerHeader para={SERVICES_PARAGRAPH} header="Out Services" />
+            <ContainerHeader para={SERVICES_PARAGRAPH} header="Our Services" />
 
             <div className=" servicesListWraper ">
 
