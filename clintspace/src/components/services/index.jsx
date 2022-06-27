@@ -1,4 +1,5 @@
 import React from 'react'
+import ContainerHeader from '../common/ContainerHeader'
 import { SERVICES_ITEMS, SERVICES_PARAGRAPH } from './servicesUtils'
 // import { code } from "../../../public/code.png"
 
@@ -14,12 +15,9 @@ function Services() {
     </div>)
 
     return (
-        <div className='bg-primary_white services  '>
+        <div className='bg-primary_white services  pagePadding ' id='services'>
 
-            <span className='flex flex-col' >
-                <h2 className='text-hero'> Our Services</h2>
-                <p className='  text-subPara text-subPara' > {SERVICES_PARAGRAPH} </p>
-            </span >
+            <ContainerHeader para={SERVICES_PARAGRAPH} header="Our Services" />
 
             <div className=" servicesListWraper ">
 

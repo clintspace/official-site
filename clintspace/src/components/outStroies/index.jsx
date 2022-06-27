@@ -9,7 +9,7 @@ const Index = () => {
           <img src="./RocketImge.png" alt="" />
         </div>
         <div className="textRow col">
-          <h2> Our Stories </h2>
+          <h2 className="text-hero"> Our Stories </h2>
           {OUR_STORY_PARAGRAPH}
         </div>
 

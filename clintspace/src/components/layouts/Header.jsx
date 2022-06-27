@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { NAV_BAR_ITEMS } from "../../constants/navBarItem";
 import { RiChat1Line } from "react-icons/ri";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
 
 function Header() {
   const [componentId, setComponentId] = useState("#Home");
@@ -26,7 +24,6 @@ function Header() {
     NAV_BAR_ITEMS.map((item) => (
       <>
         <li key={item.componentId}>
-          {" "}
           <HashLink
             className={
               item.componentId === componentId
@@ -36,11 +33,10 @@ function Header() {
             activeClassName="selected"
             to={item.componentId}
             activeStyle={{ color: "red" }}
-            onClick={() => setComponentId(item.componentId)}
+            onClick={() => { setComponentId(item.componentId); setShowMenu(false) }}
           >
-            {" "}
-            {item.icon} {item.componentName}{" "}
-          </HashLink>{" "}
+            {item.icon} {item.componentName}
+          </HashLink>
         </li>
       </>
     ));
@@ -53,7 +49,7 @@ function Header() {
 
       <span
         className={
-          showMenu ? "headerItems w3-animate-right" : "headerItems blockDisplay"
+          showMenu ? "headerItems  w3-animate-top" : "headerItems  blockDisplay"
         }
       >
         <ul>{getNavItem()}</ul>
@@ -65,11 +61,16 @@ function Header() {
       </span>
 
       <div className="hamburger">
-        <button onClick={() => setShowMenu((preState) => !preState)}>
-          {showMenu ? <AiOutlineClose /> : <GiHamburgerMenu />}
-        </button>
-      </div>
-    </div>
+        <span onClick={() => setShowMenu((preState) => !preState)}>
+          {/* {showMenu ? <AiOutlineClose /> : <GiHamburgerMenu />} */}
+          <div className={showMenu ? "change" : "container"} >
+            <div className={"bar1"}></div>
+            <div className={"bar2"}></div>
+            <div className={"bar3"}></div>
+          </div >
+        </span >
+      </div >
+    </div >
   );
 }
 
